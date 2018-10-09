@@ -33,18 +33,20 @@ class AppHeader extends Component {
         const navigation = this.guestNavigation;
 
         return (
-            <div className="container main-menu">
-                <div className="row align-items-center justify-content-between d-flex">
-                    <div id="logo">
-                        <Link to={'/'}><img src="../../../img/restart-ico.png" /></Link>
+            <div id={'header'}>
+                <div className="container main-menu">
+                    <div className="row align-items-center justify-content-between d-flex">
+                        <div id="logo">
+                            <Link to={'/'}><img src={require('../../../img/restart-ico.png')} /></Link>
+                        </div>
+                        <nav id="nav-menu-container">
+                            <ul className="nav-menu">
+                                {navigation.map((nav, i)=>{
+                                    return(<li key={i}><Link to={nav.link}>{nav.title}</Link></li>);
+                                })}
+                            </ul>
+                        </nav>
                     </div>
-                    <nav id="nav-menu-container">
-                        <ul className="nav-menu">
-                            {navigation.map((nav, i)=>{
-                                return(<li key={i}><Link to={nav.link}>{nav.title}</Link></li>);
-                            })}
-                        </ul>
-                    </nav>
                 </div>
             </div>
         );

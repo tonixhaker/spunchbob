@@ -60,9 +60,10 @@
     "workbox-webpack-plugin": "3.6.2"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "node scripts/start.js ",
     "build": "node scripts/build.js",
-    "lint": "./node_modules/.bin/eslint --fix --ext .jsx --ext .js src"
+    "lint": "./node_modules/.bin/eslint --fix --ext .jsx --ext .js src",
+    "watch-scss": "sass --watch src/style/index.scss:src/style/index.css"
   },
   "eslintConfig": {
     "extends": "react-app"
