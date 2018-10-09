@@ -9,7 +9,7 @@ class AppContent extends Component {
 
   render() {
       return (
-          <div className='content-wrapper'>
+          <div className='content-wrapper test'>
               { this.props.children }
           </div>
       );
