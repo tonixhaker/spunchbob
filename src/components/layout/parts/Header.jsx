@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 class AppHeader extends Component {
@@ -33,14 +32,14 @@ class AppHeader extends Component {
         const navigation = this.guestNavigation;
 
         return (
-            <div id={'header'}>
-                <div className="container main-menu">
-                    <div className="row align-items-center justify-content-between d-flex">
-                        <div id="logo">
-                            <Link to={'/'}><img src={require('../../../img/restart-ico.png')} /></Link>
-                        </div>
-                        <nav id="nav-menu-container">
-                            <ul className="nav-menu">
+            <div className={'header'}>
+                <div className={'menu-container'}>
+                    <div className={'flex flex-space-around'}>
+                        <Link to={'/'}>
+                            <div className={'logo'} />
+                        </Link>
+                        <nav className={'nav-menu flex flex-center flex-column'}>
+                            <ul className={'flex flex-space-around '}>
                                 {navigation.map((nav, i)=>{
                                     return(<li key={i}><Link to={nav.link}>{nav.title}</Link></li>);
                                 })}
@@ -53,9 +52,5 @@ class AppHeader extends Component {
     }
 }
 
-function mapStateToProps() {
 
-}
-
-
-export default connect(mapStateToProps)(AppHeader);
+export default AppHeader;
