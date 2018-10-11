@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {Layout} from 'antd';
+
+const { Header } = Layout;
 
 class AppHeader extends Component {
 
@@ -36,7 +39,7 @@ class AppHeader extends Component {
         const navigation = this.guestNavigation;
 
         return (
-            <div className={'header'}>
+            <Header className={'header'}>
                 <div className={'menu-container'}>
                     <div className={'flex flex-space-around'}>
                         <Link to={'/'}>
@@ -51,7 +54,7 @@ class AppHeader extends Component {
                         </nav>
                     </div>
                 </div>
-            </div>
+            </Header>
         );
     }
 }

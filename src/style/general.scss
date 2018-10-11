@@ -1,6 +1,14 @@
+$main-background : #f6f6f6;
+$text-title: #36a89d;
+$hover-text-title: #257166;
+
 body{
+  position: absolute;
+  top:0;
   text-shadow: #8a8282 0px 1px 1px;
 }
+
+
 
 .flex{
   display: flex;

@@ -6,7 +6,8 @@ body{
   position: fixed;
   width: 100%;
   top: 0;
-  background: wheat;
+  background: $main-background!important;
+  z-index: 100;
   .logo{
     background-image: url('../img/logo2.png');
     height: 70px;
@@ -26,12 +27,12 @@ body{
         a {
           letter-spacing: 0px;
           font-size: 20px;
-          color: #36a89d;
+          color: $text-title;
           text-decoration: none;
           text-transform: uppercase;
         }
         a:hover{
-          color: #257166;
+          color: $hover-text-title;
         }
       }
     }
@@ -45,5 +46,15 @@ body{
 
 .site-content{
   margin-top: 100px;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 198px)!important;
+}
+
+.footer{
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  background: $main-background;
+  text-align: center;
+  p{
+    margin: 0;
+  }
 }

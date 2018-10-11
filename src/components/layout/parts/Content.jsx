@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {Layout} from 'antd';
+
+const { Content } = Layout;
 
 class AppContent extends Component {
 
@@ -9,9 +12,9 @@ class AppContent extends Component {
 
   render() {
       return (
-          <div className='site-content'>
+          <Content className='site-content'>
               { this.props.children }
-          </div>
+          </Content>
       );
   }
 }
