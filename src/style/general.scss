@@ -1,0 +1,19 @@
+body{
+  text-shadow: #8a8282 0px 1px 1px;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-space-around{
+  justify-content: space-around;
+}
+
+.flex-center{
+  justify-content: center;
+}
+
+.flex-column{
+  flex-direction: column;
+}

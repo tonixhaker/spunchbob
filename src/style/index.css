@@ -1,15 +1,46 @@
-.header .logo {
-  background-image: url("../img/restart-ico.png");
-  height: 100px;
-  width: 100px;
-  background-size: cover; }
-.header .nav-menu ul {
-  list-style: none; }
-  .header .nav-menu ul li {
-    padding: 0px 10px; }
-    .header .nav-menu ul li a {
-      text-transform: uppercase;
-      text-decoration: none; }
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+body {
+  margin: 0; }
+
+.header {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: wheat; }
+  .header .logo {
+    background-image: url("../img/logo2.png");
+    height: 70px;
+    width: 100px;
+    background-size: cover;
+    background-position: center; }
+  .header .nav-menu {
+    font-family: 'Oswald', sans-serif; }
+    .header .nav-menu ul {
+      height: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .header .nav-menu ul li {
+        padding: 0 10px; }
+        .header .nav-menu ul li a {
+          letter-spacing: 0px;
+          font-size: 20px;
+          color: #36a89d;
+          text-decoration: none;
+          text-transform: uppercase; }
+        .header .nav-menu ul li a:hover {
+          color: #257166; }
+  @media only screen and (max-width: 700px) {
+    .header .nav-menu {
+      display: none; } }
+
+.site-content {
+  margin-top: 100px;
+  min-height: calc(100vh - 100px); }
+
+body {
+  text-shadow: #8a8282 0px 1px 1px; }
 
 .flex {
   display: flex; }

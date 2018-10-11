@@ -9,6 +9,10 @@ class AppHeader extends Component {
 
         this.guestNavigation = [
             {
+                title:'Главная',
+                link:'/about'
+            },
+            {
                 title:'О нас',
                 link:'/about'
             },
@@ -41,7 +45,7 @@ class AppHeader extends Component {
                         <nav className={'nav-menu flex flex-center flex-column'}>
                             <ul className={'flex flex-space-around '}>
                                 {navigation.map((nav, i)=>{
-                                    return(<li key={i}><Link to={nav.link}>{nav.title}</Link></li>);
+                                    return(<li className={'flex flex-center flex-column'} key={i}><Link to={nav.link}>{nav.title}</Link></li>);
                                 })}
                             </ul>
                         </nav>
