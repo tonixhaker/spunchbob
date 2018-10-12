@@ -57,4 +57,13 @@ body{
   p{
     margin: 0;
   }
+  .social-box{
+    display: flex;
+    justify-content: space-around;
+    max-width: 200px;
+    a{
+      width: 35px!important;
+      height: 35px!important;
+    }
+  }
 }

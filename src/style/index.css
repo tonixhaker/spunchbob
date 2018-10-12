@@ -83,5 +83,14 @@ body {
 .footer p {
   margin: 0;
 }
+.footer .social-box {
+  display: flex;
+  justify-content: space-around;
+  max-width: 200px;
+}
+.footer .social-box a {
+  width: 35px !important;
+  height: 35px !important;
+}
 
 /*# sourceMappingURL=index.css.map */
