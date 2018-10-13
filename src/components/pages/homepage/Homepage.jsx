@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import InviteBlock from './InviteBlock';
 import Author from './Author';
 import TitleBlock from './TitleBlock';
+import LatestPosts from './LatestPosts';
 
 class Homepage extends Component {
 
@@ -9,6 +10,7 @@ class Homepage extends Component {
         return(
             <Fragment>
                 <TitleBlock />
+                <LatestPosts />
                 <InviteBlock />
                 <Author />
             </Fragment>

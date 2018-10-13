@@ -41,6 +41,19 @@ body {
   background: #47206d !important;
 }
 
+.details-button {
+  font-size: 16px !important;
+  height: 40px !important;
+  width: 130px !important;
+  border-radius: 50px !important;
+  background: #36a89d !important;
+  border: none !important;
+  color: white !important;
+}
+.details-button:hover {
+  background: #47206d !important;
+}
+
 body {
   margin: 0;
 }
@@ -201,6 +214,49 @@ body {
   font-family: "Lobster", cursive;
   font-size: 25px;
   color: #f6f6f6;
+}
+
+.latest-posts-block {
+  text-align: center;
+  padding: 50px;
+}
+.latest-posts-block .block-title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+}
+.latest-posts-block p {
+  margin: 0;
+}
+.latest-posts-block .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 200px;
+}
+.latest-posts-block .container .post-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  border-radius: 10px;
+  width: 400px;
+}
+.latest-posts-block .container .post-card .post-description {
+  display: block;
+  padding: 0 10px;
+  height: 200px;
+  overflow: hidden;
+  font-size: 15px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.latest-posts-block .container .post-card .post-title {
+  font-size: 20px;
+  padding: 10px;
+}
+.latest-posts-block .container .post-img {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
 }
 
 /*# sourceMappingURL=index.css.map */
