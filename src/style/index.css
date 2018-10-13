@@ -1,7 +1,7 @@
+@import "../../node_modules/antd/dist/antd.css";
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 @import url("https://fonts.googleapis.com/css?family=Mali");
 @import url("https://fonts.googleapis.com/css?family=Lobster");
-@import "../../node_modules/antd/dist/antd.css";
 body {
   position: absolute;
   top: 0;
@@ -257,6 +257,60 @@ body {
   background-position: center;
   background-size: cover;
   border-radius: 15px;
+}
+
+.testimonials-block {
+  margin: 50px;
+}
+.testimonials-block .title {
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+.testimonials-block .ant-carousel .slick-slide {
+  text-align: center;
+  height: 260px;
+  line-height: 160px;
+  overflow: hidden;
+}
+.testimonials-block .ant-carousel .slick-slide h3 {
+  color: rebeccapurple;
+}
+.testimonials-block .testimonials-carousel {
+  width: 800px;
+}
+.testimonials-block .slick-list {
+  height: 210px;
+}
+.testimonials-block .ant-carousel .slick-dots li button {
+  background: rebeccapurple !important;
+}
+.testimonials-block .testimonial {
+  display: flex !important;
+  background: #f6f6f6;
+  border-radius: 15px;
+}
+.testimonials-block .testimonial .img {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+.testimonials-block .testimonial .avatar {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.testimonials-block .testimonial .avatar p {
+  display: inline-block;
+  line-height: 20px;
+  width: 100px;
+  text-align: center;
+}
+.testimonials-block .testimonial .review {
+  padding-left: 30px;
 }
 
 /*# sourceMappingURL=index.css.map */

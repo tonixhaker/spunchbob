@@ -3,6 +3,7 @@ import InviteBlock from './InviteBlock';
 import Author from './Author';
 import TitleBlock from './TitleBlock';
 import LatestPosts from './LatestPosts';
+import Testimonials from './Testimonials';
 
 class Homepage extends Component {
 
@@ -13,6 +14,7 @@ class Homepage extends Component {
                 <LatestPosts />
                 <InviteBlock />
                 <Author />
+                <Testimonials />
             </Fragment>
         );
     }

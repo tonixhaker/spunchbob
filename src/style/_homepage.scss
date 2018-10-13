@@ -136,3 +136,63 @@
     }
   }
 }
+
+.testimonials-block{
+  margin: 50px;
+  .title{
+    font-family: "Oswald", sans-serif;
+    font-size: 25px;
+    text-align: center;
+  }
+   .ant-carousel .slick-slide {
+    text-align: center;
+    height: 260px;
+    line-height: 160px;
+    overflow: hidden;
+  }
+
+  .ant-carousel .slick-slide h3 {
+    color: rebeccapurple;
+  }
+
+  .testimonials-carousel{
+    width: 800px;
+  }
+
+  .slick-list{
+    height: 210px;
+  }
+
+  .ant-carousel .slick-dots li button{
+    background: rebeccapurple!important;
+  }
+
+  .testimonial{
+    display: flex!important;
+    background: #f6f6f6;
+    border-radius: 15px;
+    .img{
+      height: 100px;
+      width: 100px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+    .avatar{
+      margin: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        display: inline-block;
+        line-height: 20px;
+        width: 100px;
+        text-align: center;
+      }
+    }
+    .review{
+      padding-left: 30px;
+    }
+  }
+
+}
