@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import AppContent from './parts/Content';
@@ -17,13 +17,13 @@ class DefaultLayout extends Component {
 
   render() {
       return (
-          <Fragment>
+          <div className={'flex flex-center flex-column'}>
               <AppHeader />
               <AppContent>
                   { this.props.children }
               </AppContent>
               <AppFooter />
-          </Fragment>
+          </div>
       );
   }
 }

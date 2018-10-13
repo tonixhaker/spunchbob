@@ -1,0 +1,16 @@
+.btn{
+  text-shadow: #8a8282 0px 1px 1px;
+}
+
+.order-btn{
+  font-size: 20px!important;
+  height: 50px!important;
+  width: 200px!important;
+  border-radius: 50px!important;
+  background: rebeccapurple!important;
+  border: none!important;
+  color: white!important;
+  &:hover{
+    background: #47206d !important;
+  }
+}

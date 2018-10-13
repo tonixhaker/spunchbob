@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import {Button} from 'antd';
-
+import React, {Component, Fragment} from 'react';
+import InviteBlock from './InviteBlock';
 
 class Homepage extends Component {
 
     render() {
         return(
-            <Button>sfsdfsd</Button>
+            <Fragment>
+                <InviteBlock />
+            </Fragment>
         );
     }
 }
