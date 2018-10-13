@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 @import url("https://fonts.googleapis.com/css?family=Mali");
+@import url("https://fonts.googleapis.com/css?family=Lobster");
 @import "../../node_modules/antd/dist/antd.css";
 body {
   position: absolute;
@@ -175,6 +176,31 @@ body {
 .author-block .container .block-left .info {
   font-size: 18px;
   font-family: "Mali", cursive;
+}
+
+.title-block .paralax-content {
+  text-align: center;
+  user-select: none;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.title-block .paralax-content .title {
+  font-size: 8em;
+  font-family: "Oswald", sans-serif;
+  color: #f6f6f6;
+  text-shadow: 2px 2px #36a89d;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+.title-block .paralax-content .title p {
+  margin: 0;
+}
+.title-block .paralax-content .call p {
+  font-family: "Lobster", cursive;
+  font-size: 25px;
+  color: #f6f6f6;
 }
 
 /*# sourceMappingURL=index.css.map */

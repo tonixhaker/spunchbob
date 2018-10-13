@@ -64,3 +64,32 @@
     }
   }
 }
+
+.title-block{
+  .paralax-content{
+    text-align: center;
+    user-select: none;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+      .title{
+      font-size: 8em;
+      font-family: "Oswald", sans-serif;
+      color: #f6f6f6;
+      text-shadow: 2px 2px #36a89d;
+      font-weight: 600;
+      letter-spacing: 3px;
+        p{
+          margin: 0;
+        }
+    }
+    .call{
+      p {
+        font-family: 'Lobster', cursive;
+        font-size: 25px;
+        color: #f6f6f6;
+      }
+    }
+  }
+}
