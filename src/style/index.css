@@ -146,4 +146,28 @@ body {
   color: white;
 }
 
+.author-block {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.author-block .container {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+.author-block .container .image-right {
+  width: 200px;
+  height: 200px;
+  background-image: url("../img/kriss.jpg");
+  background-size: cover;
+  background-position-y: -12px;
+  border-radius: 50%;
+}
+.author-block .container .block-left {
+  width: 50%;
+}
+
 /*# sourceMappingURL=index.css.map */
