@@ -36,7 +36,7 @@ class Testimonials extends Component {
                 <h2 className={'title'}> Отзывы </h2>
                 <div className={'flex flex-center'}>
                     <div className={'testimonials-carousel'}>
-                        <Carousel autoplay>                    {
+                        <Carousel autoplay effect={'fade'} autoplaySpeed={5000}>                    {
                             fake.map((value,key)=>{
                                 return(
                                     <div key={key} className={'testimonial'}>
