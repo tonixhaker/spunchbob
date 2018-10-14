@@ -4,7 +4,7 @@ import DefaultLayout from '../components/layout/DefaultLayout';
 
 const CustomRoute = ({ component: Component,  ...rest }) => {
     return <Route {...rest} render={props => (
-        <DefaultLayout>
+        <DefaultLayout {...rest}>
             <Component {...props} />
         </DefaultLayout>
     )} />;

@@ -8,6 +8,9 @@ body{
   top: 0;
   background: $main-background!important;
   z-index: 100;
+  .headerfix{
+    max-width: 1700px;
+  }
   .logo{
     background-image: url('../img/logo2.png');
     height: 70px;

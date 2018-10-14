@@ -66,6 +66,9 @@ body {
   background: #f6f6f6 !important;
   z-index: 100;
 }
+.header .headerfix {
+  max-width: 1700px;
+}
 .header .logo {
   background-image: url("../img/logo2.png");
   height: 70px;

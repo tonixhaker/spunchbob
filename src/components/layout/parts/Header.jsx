@@ -13,7 +13,7 @@ class AppHeader extends Component {
         this.guestNavigation = [
             {
                 title:'Главная',
-                link:'/about'
+                link:'/'
             },
             {
                 title:'О нас',
@@ -41,7 +41,7 @@ class AppHeader extends Component {
         return (
             <Header className={'header'}>
                 <div className={'menu-container'}>
-                    <div className={'flex flex-space-around'}>
+                    <div className={'flex flex-space-around headerfix'}>
                         <Link to={'/'}>
                             <div className={'logo'} />
                         </Link>

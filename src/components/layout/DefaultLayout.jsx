@@ -9,6 +9,7 @@ class DefaultLayout extends Component {
 
   static propTypes = {
       children: PropTypes.node.isRequired,
+      footer:PropTypes.bool
   };
 
   constructor(props){
@@ -22,7 +23,9 @@ class DefaultLayout extends Component {
               <AppContent>
                   { this.props.children }
               </AppContent>
-              <AppFooter />
+              {this.props.footer !== false &&
+                <AppFooter/>
+              }
           </div>
       );
   }
