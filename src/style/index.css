@@ -154,6 +154,7 @@ body {
   color: white;
 }
 .invite-block .container .block-right .info {
+  text-align: justify;
   padding: 0 40px;
   font-size: 18px;
   font-family: "Mali", cursive;
@@ -189,6 +190,8 @@ body {
 .author-block .container .block-left .info {
   font-size: 18px;
   font-family: "Mali", cursive;
+  text-align: justify;
+  padding-right: 20px;
 }
 
 .title-block .paralax-content {
@@ -237,7 +240,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
   padding: 10px;
   border-radius: 10px;
-  width: 400px;
+  width: 350px;
 }
 .latest-posts-block .container .post-card .post-description {
   display: block;
@@ -260,7 +263,7 @@ body {
 }
 
 .testimonials-block {
-  margin: 50px;
+  margin: 50px 0;
 }
 .testimonials-block .title {
   font-family: "Oswald", sans-serif;
@@ -272,6 +275,7 @@ body {
   height: 260px;
   line-height: 160px;
   overflow: hidden;
+  line-height: normal;
 }
 .testimonials-block .ant-carousel .slick-slide h3 {
   color: rebeccapurple;
@@ -298,6 +302,7 @@ body {
   border-radius: 50%;
 }
 .testimonials-block .testimonial .avatar {
+  max-height: 200px;
   margin: 15px;
   display: flex;
   flex-direction: column;
@@ -311,6 +316,139 @@ body {
 }
 .testimonials-block .testimonial .review {
   padding-left: 30px;
+  width: 100%;
+}
+.testimonials-block .testimonial .review p {
+  text-align: justify;
+  padding: 10px 10px 10px 0;
+  height: 170px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1600px) {
+  .latest-posts-block .container {
+    padding: 10px 50px;
+  }
+}
+@media only screen and (max-width: 1320px) {
+  .invite-block .container .block-right {
+    width: 60%;
+  }
+
+  .invite-block .container .image-left {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .latest-posts-block .container .post-card {
+    width: 300px;
+  }
+
+  .author-block .container {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  .latest-posts-block {
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .latest-posts-block .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .latest-posts-block .container .post-card {
+    margin: 0 30px 20px;
+  }
+}
+@media only screen and (max-width: 1150px) {
+  .author-block .container .block-left {
+    width: 80%;
+  }
+
+  .author-block .container .image-right {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .invite-block .container .image-left {
+    width: 100%;
+  }
+
+  .invite-block .container .block-right {
+    width: 100%;
+    margin-top: -150px;
+    padding-bottom: 20px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .latest-posts-block .container .post-card {
+    width: 80%;
+  }
+
+  .author-block .container .block-left .title {
+    text-align: center;
+  }
+
+  .author-block .container .block-left .image-mobile {
+    display: flex;
+    justify-content: center;
+  }
+  .author-block .container .block-left .image-mobile .img {
+    width: 200px;
+    height: 200px;
+    background-image: url("../img/kriss.jpg");
+    background-size: cover;
+    background-position-y: -12px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  .author-block .container .mobile-hide {
+    display: none;
+  }
+
+  .testimonials-block .testimonials-carousel {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .latest-posts-block .container .post-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .latest-posts-block .container {
+    padding: 10px;
+  }
+
+  .author-block .container {
+    width: 100%;
+  }
+
+  .author-block .container .block-left {
+    width: 90%;
+  }
+
+  .testimonials-block .testimonials-carousel {
+    width: 95%;
+  }
+
+  .author-block .container .block-left .info {
+    padding-right: 0;
+  }
+
+  .title-block .paralax-content .call p {
+    font-size: 18px;
+  }
+
+  .title-block .paralax-content .title {
+    font-size: 6em;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
