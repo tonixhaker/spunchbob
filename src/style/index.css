@@ -487,23 +487,94 @@ body {
   justify-content: space-between;
 }
 
+.login-block {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.login-block .paralaxcontent {
+  height: calc(100vh - 70px);
+}
+.login-block .container {
+  width: 40%;
+  margin-top: 50px;
+}
+.login-block .container .ant-form label {
+  font-size: 15px;
+  font-weight: 600;
+  text-shadow: #a5a2a2 0px 1px 1px;
+}
+.login-block .container form {
+  background: #5aa17366;
+  padding: 20px;
+  border-radius: 15px;
+}
+.login-block .container form .login-button-container .social-auth {
+  flex-wrap: wrap;
+}
+.login-block .container form .login-button-container .social-auth .googleButton {
+  background: #353a66;
+  height: 40px;
+  width: 223px;
+  min-width: 223px;
+  border: 0;
+  font-size: 16px;
+  color: white;
+}
+.login-block .container form .login-button-container .social-auth .googleButton p {
+  margin-top: 8px;
+}
+.login-block .container form .login-button-container .social-auth .googleButton .googlepic {
+  margin-top: 1px;
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  background-image: url("../img/google.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.login-block .container form .login-button-container .social-auth .googleButton .contain {
+  display: flex;
+  justify-content: space-around;
+}
+.login-block .container form .login-button-container .social-auth div, .login-block .container form .login-button-container .social-auth button {
+  margin: 0 5px 10px 0;
+}
+.login-block .container form .login-button-container .simple-login {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.login-block .container .login-form .form-title {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 2px 2px #ffffff;
+  color: #36a89d;
+}
+
 @media only screen and (max-width: 1300px) {
-  .registration-block .container {
+  .registration-block .container,
+.login-block .container {
     width: 50%;
   }
 }
 @media only screen and (max-width: 1000px) {
-  .registration-block .container {
+  .registration-block .container,
+.login-block .container {
     width: 60%;
   }
 }
 @media only screen and (max-width: 700px) {
-  .registration-block .container {
+  .registration-block .container,
+.login-block .container {
     width: 80%;
   }
 }
 @media only screen and (max-width: 500px) {
-  .registration-block .container {
+  .registration-block .container,
+.login-block .container {
     width: 95%;
   }
 }
