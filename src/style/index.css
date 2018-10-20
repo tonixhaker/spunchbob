@@ -496,11 +496,12 @@ body {
   width: 100%;
 }
 .registration-block .paralaxcontent {
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 }
 .registration-block .container {
   width: 40%;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 .registration-block .container .ant-form label {
   font-size: 15px;
@@ -519,6 +520,7 @@ body {
   text-shadow: 2px 2px #ffffff;
 }
 .registration-block .container .register-form .buttons {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -530,11 +532,12 @@ body {
   width: 100%;
 }
 .login-block .paralaxcontent {
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 }
 .login-block .container {
   width: 40%;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 .login-block .container .ant-form label {
   font-size: 15px;
@@ -545,6 +548,9 @@ body {
   background: #5aa17366;
   padding: 20px;
   border-radius: 15px;
+}
+.login-block .container form .login-button-container {
+  margin-top: 20px;
 }
 .login-block .container form .login-button-container .social-auth {
   flex-wrap: wrap;
@@ -588,6 +594,19 @@ body {
   font-size: 40px;
   text-shadow: 2px 2px #ffffff;
   color: #36a89d;
+}
+
+.login-block .container .ant-form-explain,
+.registration-block .container .ant-form-explain {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  color: #f5222d;
+  font-weight: 600;
+}
+.login-block .container .ant-row,
+.registration-block .container .ant-row {
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width: 1300px) {

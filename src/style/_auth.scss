@@ -4,11 +4,12 @@
   flex-direction: column;
   width: 100%;
   .paralaxcontent{
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
   }
   .container{
     width: 40%;
     margin-top: 50px;
+    margin-bottom: 50px;
     .ant-form label {
       font-size: 15px;
       font-weight: 600;
@@ -27,6 +28,7 @@
         text-shadow: 2px 2px #ffffff;
       }
       .buttons{
+        margin-top: 20px;
         display: flex;
         justify-content: space-between;
       }
@@ -40,11 +42,12 @@
   flex-direction: column;
   width: 100%;
   .paralaxcontent{
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
   }
   .container{
     width: 40%;
     margin-top: 50px;
+    margin-bottom: 50px;
     .ant-form label {
       font-size: 15px;
       font-weight: 600;
@@ -55,6 +58,7 @@
       padding: 20px;
       border-radius: 15px;
       .login-button-container{
+        margin-top: 20px;
         .social-auth{
           flex-wrap: wrap;
           .googleButton{
@@ -102,6 +106,20 @@
         color: rgb(54, 168, 157);
       }
     }
+  }
+}
+
+.login-block .container ,
+.registration-block .container{
+  .ant-form-explain {
+    position: absolute;
+    width: 100%;
+    text-align: right;
+    color: #f5222d;
+    font-weight: 600;
+  }
+  .ant-row{
+    margin-bottom: 0;
   }
 }
 

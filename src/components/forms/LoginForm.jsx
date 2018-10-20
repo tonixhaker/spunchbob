@@ -37,7 +37,6 @@ const LoginForm = ({
         <Form className="login-form" name="login" onSubmit={handleSubmit}>
             <h1 className={'form-title'}>Вход</h1>
             <InputFiled
-                required
                 size={'large'}
                 dark
                 onChange={handleChange}
@@ -46,11 +45,10 @@ const LoginForm = ({
                 meta={{ touched: touched.email, error: errors.email }}
                 type="text"
                 placeholder="Ваш Email"
-                label="Логин(Email)"
+                label="Логин"
                 value={values.email}
             />
             <PasswordField
-                required
                 size={'large'}
                 dark
                 onChange={handleChange}
@@ -68,8 +66,7 @@ const LoginForm = ({
                             Войти
                     </Button>
                     <div className={'flex flex-column flex-center'}>
-                        <Link to={'register'}>Зарегистрироваться</Link>
-                        <Link to={''}>Забыли пароль?</Link>
+                        <Link to={''} style={{color:'white'}}>Забыли пароль?</Link>
                     </div>
                 </div>
                 <div className={'social-auth flex flex-center'}>
