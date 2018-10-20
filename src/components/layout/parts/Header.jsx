@@ -18,7 +18,6 @@ class AppHeader extends Component {
     }
 
     mobileMenuSwitch = () => {
-        console.log(this.state.isShown);
         this.setState({isShown:!this.state.isShown});
     };
 
@@ -39,12 +38,13 @@ class AppHeader extends Component {
                                     position={'right'}
                                     isShown={isShown}
                                     onCloseComplete={() => this.setState({isShown:false})}
+                                    width={'100%'}
                                     containerProps={{
                                         marginTop:'64px',
                                         paddingBottom:'30px',
                                         paddingTop:'20px',
                                         height:'auto',
-                                        width:'auto'
+                                        width:'100%'
                                     }}
                                     hasCancel={false}
                                 >
