@@ -5,11 +5,8 @@ import { withFormik } from 'formik';
 import { InputFiled, PasswordField } from '../../common';
 import {
     required,
-    minLength,
     email,
-    validateForm,
-    charsAndDigitsOnly,
-    oneLetterOneDigit
+    validateForm
 } from '../../common/validation';
 import { GoogleLogin } from 'react-google-login';
 import { GOOGLE_KEY } from '../../common/config';
@@ -17,8 +14,8 @@ import TelegramLoginButton from 'react-telegram-login';
 import { Link } from 'react-router-dom';
 
 const loginFormSchema = {
-    email: [required, email, minLength(3)],
-    password: [required, oneLetterOneDigit, charsAndDigitsOnly, minLength(6)]
+    email: [required, email],
+    password: [required]
 };
 
 const validate = values => validateForm(values, loginFormSchema);
