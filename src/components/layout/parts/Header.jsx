@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {Layout} from 'antd';
+import {Button, Icon, SideSheet} from 'evergreen-ui';
+import RoutesList from './RoutesList';
 
 const { Header } = Layout;
 
@@ -10,34 +12,19 @@ class AppHeader extends Component {
     constructor(props) {
         super(props);
 
-        this.guestNavigation = [
-            {
-                title:'Главная',
-                link:'/'
-            },
-            {
-                title:'О нас',
-                link:'/about'
-            },
-            {
-                title: 'Блог',
-                link: '/blog'
-            },
-            {
-                title: 'Войти',
-                link: '/login'
-            },
-            {
-                title: 'Зарегистрироваться',
-                link: '/register'
-            }
-        ];
+        this.state = {
+            isShown:false
+        };
     }
+
+    mobileMenuSwitch = () => {
+        console.log(this.state.isShown);
+        this.setState({isShown:!this.state.isShown});
+    };
 
 
     render() {
-        const navigation = this.guestNavigation;
-
+        const { isShown } = this.state;
         return (
             <Header className={'header'}>
                 <div className={'menu-container'}>
@@ -45,13 +32,33 @@ class AppHeader extends Component {
                         <Link to={'/'}>
                             <div className={'logo'} />
                         </Link>
-                        <nav className={'nav-menu flex flex-center flex-column'}>
-                            <ul className={'flex flex-space-around '}>
-                                {navigation.map((nav, i)=>{
-                                    return(<li className={'flex flex-center flex-column'} key={i}><Link to={nav.link}>{nav.title}</Link></li>);
-                                })}
-                            </ul>
-                        </nav>
+                        <RoutesList />
+                        {
+                            <div className={'flex flex-center flex-column'}>
+                                <SideSheet
+                                    position={'right'}
+                                    isShown={isShown}
+                                    onCloseComplete={() => this.setState({isShown:false})}
+                                    containerProps={{
+                                        marginTop:'64px',
+                                        paddingBottom:'30px',
+                                        paddingTop:'20px',
+                                        height:'auto',
+                                        width:'auto'
+                                    }}
+                                    hasCancel={false}
+                                >
+                                    <RoutesList mobile />
+                                </SideSheet>
+                                <Button  className={'transparent-button mobile-header-button'} onClick={this.mobileMenuSwitch}>
+                                    {!isShown ?
+                                        <Icon icon="menu" size={40} color={'#36a89d'}/>
+                                        :
+                                        <Icon icon="cross" size={40} color={'#36a89d'}/>
+                                    }
+                                </Button>
+                            </div>
+                        }
                     </div>
                 </div>
             </Header>
