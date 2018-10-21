@@ -1,7 +1,7 @@
 import {success, error} from 'redux-saga-requests';
-import * as types from './action-types';
 import { STATE_STATUSES } from '../../common/constants/statuses';
 import { tokenStore } from '../../common/helpers/storage';
+import {AUTH_FETCH_USER, AUTH_GOOGLE, AUTH_LOGIN, AUTH_LOGOUT, AUTH_REGISTER, AUTH_TELEGRAM} from './actions';
 
 const user = {
     id: null,
@@ -25,50 +25,74 @@ export default (state = initialState, action) => {
     switch (action.type) {
 
 
-    case types.AUTH_LOGIN: {
+    case AUTH_LOGIN: {
         return processReducer(state);
     }
-    case success(types.AUTH_LOGIN) : {
+    case success(AUTH_LOGIN) : {
         const { token, user } = action.payload.data.data;
         tokenStore(token);
         return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
     }
-    case error(types.AUTH_LOGIN) : {
+    case error(AUTH_LOGIN) : {
         return errorReducer(action.payload.response.data);
     }
 
-
-    case types.AUTH_REGISTER: {
+    case AUTH_GOOGLE: {
         return processReducer(state);
     }
-    case success(types.AUTH_REGISTER) : {
+    case success(AUTH_GOOGLE) : {
         const { token, user } = action.payload.data.data;
         tokenStore(token);
         return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
     }
-    case error(types.AUTH_REGISTER) : {
+    case error(AUTH_GOOGLE) : {
+        return errorReducer(action.payload.response.data);
+    }
+
+    case AUTH_TELEGRAM: {
+        return processReducer(state);
+    }
+    case success(AUTH_TELEGRAM) : {
+        const { token, user } = action.payload.data.data;
+        tokenStore(token);
+        return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
+    }
+    case error(AUTH_TELEGRAM) : {
         return errorReducer(action.payload.response.data);
     }
 
 
-    case types.AUTH_FETCH_USER: {
+    case AUTH_REGISTER : {
         return processReducer(state);
     }
-    case success(types.AUTH_FETCH_USER) : {
+    case success(AUTH_REGISTER) : {
+        const { token, user } = action.payload.data.data;
+        tokenStore(token);
+        return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
+    }
+    case error(AUTH_REGISTER) : {
+        return errorReducer(action.payload.response.data);
+    }
+
+
+    case AUTH_FETCH_USER: {
+        return processReducer(state);
+    }
+    case success(AUTH_FETCH_USER) : {
         const { user } = action.payload.data.data;
         return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
     }
-    case error(types.AUTH_FETCH_USER) : {
+    case error(AUTH_FETCH_USER) : {
         return errorReducer(action.payload.response.data);
     }
 
-    case types.AUTH_LOGOUT: {
+    case AUTH_LOGOUT: {
         return processReducer(state);
     }
-    case success(types.AUTH_LOGOUT): {
+    case success(AUTH_LOGOUT): {
         return {...initialState, status: STATE_STATUSES.READY, isAuthenticated: false };
     }
-    case error(types.AUTH_LOGOUT): {
+    case error(AUTH_LOGOUT): {
         return errorReducer(action.payload.response.data);
     }
 

@@ -1,23 +1,27 @@
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
-import { middleware as thunkMiddleware } from 'redux-saga-thunk';
-import thunk from 'redux-thunk';
+import { requestsPromiseMiddleware } from 'redux-saga-requests';
+
+import thunkMiddleware from 'redux-thunk';
+
 import saga from './saga';
-import { combineReducers } from 'redux';
 
 import auth from './auth/reducer';
 
+
+const loggerMiddleware = createLogger();
+const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
     auth
 });
 
-const loggerMiddleware = createLogger();
-const sagaMiddleware = createSagaMiddleware();
+export function initializeStore(initialState = undefined) {
+    const store = createStore(rootReducer, initialState,
+        applyMiddleware(requestsPromiseMiddleware({auto: true}), thunkMiddleware, sagaMiddleware, loggerMiddleware));
 
-const store = createStore(rootReducer, applyMiddleware(thunk, thunkMiddleware, sagaMiddleware, loggerMiddleware));
+    sagaMiddleware.run(saga);
 
-sagaMiddleware.run(saga);
-
-export default store;
+    return store;
+}

@@ -1,6 +1,7 @@
 import axios from 'axios';
+
 import { createRequestInstance, watchRequests } from 'redux-saga-requests';
-import {createDriver} from 'redux-saga-requests-axios';
+import { createDriver } from 'redux-saga-requests-axios';
 
 const axiosInstance = axios.create({
     baseURL: 'http://localhost:8000',

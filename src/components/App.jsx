@@ -1,13 +1,13 @@
 import React,{ Component } from 'react';
 import {Provider} from 'react-redux';
 import Routes from '../routes';
-import store from '../store/index';
+import {initializeStore} from '../store/index';
 import '../style/index.css';
 
 class App extends Component {
     render() {
         return (
-            <Provider store={store}>
+            <Provider store={initializeStore()}>
                 <Routes />
             </Provider>
         );
