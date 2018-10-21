@@ -35,7 +35,6 @@ const LoginForm = ({
             <h1 className={'form-title'}>Вход</h1>
             <InputFiled
                 size={'large'}
-                dark
                 onChange={handleChange}
                 onBlur={handleBlur}
                 name="email"
@@ -47,7 +46,6 @@ const LoginForm = ({
             />
             <PasswordField
                 size={'large'}
-                dark
                 onChange={handleChange}
                 onBlur={handleBlur}
                 meta={{ touched: touched.password, error: errors.password }}

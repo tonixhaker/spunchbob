@@ -1,7 +1,7 @@
 import {success, error} from 'redux-saga-requests';
 import * as types from './action-types';
 import { STATE_STATUSES } from '../../common/constants/statuses';
-import { tokenStore, setAuthHeader } from '../../common/helpers/storage';
+import { tokenStore } from '../../common/helpers/storage';
 
 const user = {
     id: null,
@@ -29,14 +29,39 @@ export default (state = initialState, action) => {
         return processReducer(state);
     }
     case success(types.AUTH_LOGIN) : {
-        const { token } = action.payload.data.data;
+        const { token, user } = action.payload.data.data;
         tokenStore(token);
-        setAuthHeader(token);
-        return { ...state, status: STATE_STATUSES.READY, isAuthenticated: true };
+        return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
     }
     case error(types.AUTH_LOGIN) : {
         return errorReducer(action.payload.response.data);
     }
+
+
+    case types.AUTH_REGISTER: {
+        return processReducer(state);
+    }
+    case success(types.AUTH_REGISTER) : {
+        const { token, user } = action.payload.data.data;
+        tokenStore(token);
+        return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
+    }
+    case error(types.AUTH_REGISTER) : {
+        return errorReducer(action.payload.response.data);
+    }
+
+
+    case types.AUTH_FETCH_USER: {
+        return processReducer(state);
+    }
+    case success(types.AUTH_FETCH_USER) : {
+        const { user } = action.payload.data.data;
+        return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
+    }
+    case error(types.AUTH_FETCH_USER) : {
+        return errorReducer(action.payload.response.data);
+    }
+
 
     default:
         return state;

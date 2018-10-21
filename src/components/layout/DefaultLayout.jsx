@@ -4,13 +4,22 @@ import PropTypes from 'prop-types';
 import AppContent from './parts/Content';
 import AppFooter from './parts/Footer';
 import AppHeader from './parts/Header';
+import { fetchAuthUser } from '../../store/auth/actions';
 
 class DefaultLayout extends Component {
 
   static propTypes = {
       children: PropTypes.node.isRequired,
-      footer:PropTypes.bool
+      footer:PropTypes.bool,
+      fetchAuthUser: PropTypes.func,
+      user:PropTypes.object
   };
+
+  componentDidMount() {
+      if(!this.props.user.id) {
+          this.props.fetchAuthUser();
+      }
+  }
 
   constructor(props){
       super(props);
@@ -31,9 +40,13 @@ class DefaultLayout extends Component {
   }
 }
 
-const mapStateToProps = () => ({});
+const mapStateToProps = (store) => ({
+    user:store.auth.user
+});
 
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+    fetchAuthUser: () => dispatch(fetchAuthUser())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DefaultLayout);
 

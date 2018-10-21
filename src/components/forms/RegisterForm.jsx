@@ -8,7 +8,6 @@ import {
     minLength,
     email,
     validateForm,
-    oneLetterOneDigit,
     charsOnly,
     passwordConfirmation
 } from '../../common/validation';
@@ -18,7 +17,7 @@ const registerFormSchema = {
     first_name: [required, charsOnly],
     last_name: [required, charsOnly],
     email: [required, email, minLength(3)],
-    password: [required, oneLetterOneDigit, minLength(6)],
+    password: [required, minLength(6)],
     c_password: [required, passwordConfirmation('password')]
 };
 
@@ -31,7 +30,6 @@ const RegisterForm = ({ errors, touched, handleChange, handleBlur, handleSubmit,
             <InputFiled
                 size={'large'}
                 required
-                dark
                 onChange={handleChange}
                 onBlur={handleBlur}
                 name="first_name"
@@ -44,7 +42,6 @@ const RegisterForm = ({ errors, touched, handleChange, handleBlur, handleSubmit,
             <InputFiled
                 size={'large'}
                 required
-                dark
                 onChange={handleChange}
                 onBlur={handleBlur}
                 name="last_name"
@@ -57,7 +54,6 @@ const RegisterForm = ({ errors, touched, handleChange, handleBlur, handleSubmit,
             <InputFiled
                 size={'large'}
                 required
-                dark
                 onChange={handleChange}
                 onBlur={handleBlur}
                 name="email"
@@ -70,7 +66,6 @@ const RegisterForm = ({ errors, touched, handleChange, handleBlur, handleSubmit,
             <PasswordField
                 size={'large'}
                 required
-                dark
                 onChange={handleChange}
                 onBlur={handleBlur}
                 meta={{ touched: touched.password, error: errors.password }}
@@ -83,7 +78,6 @@ const RegisterForm = ({ errors, touched, handleChange, handleBlur, handleSubmit,
             <PasswordField
                 size={'large'}
                 required
-                dark
                 onChange={handleChange}
                 onBlur={handleBlur}
                 meta={{ touched: touched.c_password, error: errors.c_password }}

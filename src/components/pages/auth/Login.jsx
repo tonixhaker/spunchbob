@@ -12,8 +12,8 @@ class Login extends Component {
       login:PropTypes.func,
   };
 
-  onSubmit = () => {
-      this.props.login({test:'test'});
+  onSubmit = (data) => {
+      this.props.login(data);
   };
   render() {
       return(

@@ -1,7 +1,21 @@
 import React, {Component, Fragment} from 'react';
 import RegisterForm from '../../forms/RegisterForm';
 import {Parallax} from 'react-parallax';
+import {register} from '../../../store/auth/actions';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+
+
+
 class Registration extends Component {
+
+    static propTypes = {
+        register:PropTypes.func,
+    };
+
+    onSubmit = (data) => {
+        this.props.register(data);
+    };
 
     render() {
         return(
@@ -15,7 +29,9 @@ class Registration extends Component {
                     >
                         <div className={'flex flex-center paralaxcontent'}>
                             <div className={'container'}>
-                                <RegisterForm />
+                                <RegisterForm
+                                    onSubmit={this.onSubmit}
+                                />
                             </div>
                         </div>
                     </Parallax>
@@ -24,5 +40,10 @@ class Registration extends Component {
         );
     }
 }
+const mapStateToProps = () => ({});
 
-export default Registration;
+const mapDispatchToProps = (dispatch) => ({
+    register: (data) => dispatch(register(data)),
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(Registration);
