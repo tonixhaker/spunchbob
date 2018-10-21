@@ -1,32 +1,60 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {fetchAuthUser} from '../store/auth/actions';
 import DefaultLayout from '../components/layout/DefaultLayout';
+import {STATE_STATUSES} from '../common/constants/statuses';
+import {Redirect} from 'react-router-dom';
+import Loader from '../common/components/loader/Loader';
+
 
 
 class Private extends React.Component {
   static propTypes = {
-      component: PropTypes.func.isRequired,
-      fetchAuthUser: PropTypes.func.isRequired,
-      location: PropTypes.object,
-      isAuthenticated: PropTypes.bool,
-      authUser: PropTypes.object,
-      path:PropTypes.string
+      status:PropTypes.number,
+      user:PropTypes.object,
+      fetchAuthUser:PropTypes.func,
+      isAuthenticated:PropTypes.bool
   };
 
   UNSAFE_componentWillMount() {
-      if(this.props.isAuthenticated && !this.props.authUser.id) {
+      if(!this.props.user.id) {
           this.props.fetchAuthUser();
       }
   }
 
   render() {
+      const { user, isAuthenticated, status} = this.props;
       const Component = this.props.component;
-      return (
-          <DefaultLayout>
-              <Component {...this.props} />
-          </DefaultLayout>
-      );
+
+      if(isAuthenticated && status !== STATE_STATUSES.PENDING) {
+          if(user.id && isAuthenticated) {
+              return (
+                  <DefaultLayout>
+                      <Component {...this.props} />
+                  </DefaultLayout>
+              );
+          } else {
+              return <Loader height={'100vh'} size={100} />;
+          }
+      }
+      else if(status === STATE_STATUSES.PENDING){
+          return <Loader height={'100vh'} size={100} />;
+      }
+      else {
+          return <Redirect to={'/login'} />;
+      }
   }
 }
 
-export default Private;
+const mapStateToProps = (store) => ({
+    isAuthenticated:store.auth.isAuthenticated,
+    status:store.auth.status,
+    user:store.auth.user
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    fetchAuthUser: () => dispatch(fetchAuthUser()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Private);

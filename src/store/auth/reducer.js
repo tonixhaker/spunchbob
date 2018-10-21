@@ -13,8 +13,8 @@ const user = {
 
 const initialState = {
     user: user,
-    isAuthenticated: null,
-    status: STATE_STATUSES.READY,
+    isAuthenticated: false,
+    status: STATE_STATUSES.PENDING,
     exception: {
         message: null,
         errors: {}
@@ -59,6 +59,16 @@ export default (state = initialState, action) => {
         return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
     }
     case error(types.AUTH_FETCH_USER) : {
+        return errorReducer(action.payload.response.data);
+    }
+
+    case types.AUTH_LOGOUT: {
+        return processReducer(state);
+    }
+    case success(types.AUTH_LOGOUT): {
+        return {...initialState, status: STATE_STATUSES.READY, isAuthenticated: false };
+    }
+    case error(types.AUTH_LOGOUT): {
         return errorReducer(action.payload.response.data);
     }
 

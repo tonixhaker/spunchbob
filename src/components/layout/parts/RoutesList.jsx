@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 
 class RoutesList extends Component {
 
     static propTypes = {
-        mobile:PropTypes.bool
-    }
+        mobile:PropTypes.bool,
+        isAuthenticated:PropTypes.bool
+    };
 
     constructor(props) {
         super(props);
@@ -35,6 +37,29 @@ class RoutesList extends Component {
             }
         ];
 
+        this.authNavigation = [
+            {
+                title:'Главная',
+                link:'/'
+            },
+            {
+                title:'О нас',
+                link:'/about'
+            },
+            {
+                title: 'Блог',
+                link: '/blog'
+            },
+            {
+                title: 'Мой профиль',
+                link: '/profile'
+            },
+            {
+                title: 'Выйти',
+                link: '/logout'
+            }
+        ];
+
         this.state = {
             isShown:false
         };
@@ -42,7 +67,7 @@ class RoutesList extends Component {
 
 
     render() {
-        const navigation = this.guestNavigation;
+        const navigation = this.props.isAuthenticated?this.authNavigation:this.guestNavigation;
         const {mobile} = this.props;
         return (
 
@@ -58,5 +83,10 @@ class RoutesList extends Component {
     }
 }
 
+const mapStateToProps = (store) => ({
+    isAuthenticated:store.auth.isAuthenticated
+});
 
-export default RoutesList;
+const mapDispatchToProps = () => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(RoutesList);

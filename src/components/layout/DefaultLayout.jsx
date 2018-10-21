@@ -12,7 +12,7 @@ class DefaultLayout extends Component {
       children: PropTypes.node.isRequired,
       footer:PropTypes.bool,
       fetchAuthUser: PropTypes.func,
-      user:PropTypes.object
+      user:PropTypes.object,
   };
 
   componentDidMount() {
@@ -41,7 +41,8 @@ class DefaultLayout extends Component {
 }
 
 const mapStateToProps = (store) => ({
-    user:store.auth.user
+    user:store.auth.user,
+    status:store.auth.status
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -37,5 +37,21 @@ export const fetchAuthUser = () => ({
             method: 'post',
             url: `${resourceBase}/get-auth-user`
         }
+    },
+    meta: {
+        thunk: true
+    }
+});
+
+export const logout = () => ({
+    type: types.AUTH_LOGOUT,
+    payload: {
+        request: {
+            method: 'post',
+            url: `${resourceBase}/logout`
+        }
+    },
+    meta: {
+        thunk: true
     }
 });
