@@ -1,6 +1,6 @@
 import {success, error} from 'redux-saga-requests';
 import { STATE_STATUSES } from '../../common/constants/statuses';
-import { tokenStore } from '../../common/helpers/storage';
+import {tokenStore} from '../../common/helpers/storage';
 import {AUTH_FETCH_USER, AUTH_GOOGLE, AUTH_LOGIN, AUTH_LOGOUT, AUTH_REGISTER, AUTH_TELEGRAM} from './actions';
 
 const user = {

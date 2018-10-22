@@ -5,6 +5,7 @@ import AppContent from './parts/Content';
 import AppFooter from './parts/Footer';
 import AppHeader from './parts/Header';
 import { fetchAuthUser } from '../../store/auth/actions';
+import {setAuthHeader, tokenRestore} from '../../common/helpers/storage';
 
 class DefaultLayout extends Component {
 
@@ -16,7 +17,8 @@ class DefaultLayout extends Component {
   };
 
   componentDidMount() {
-      if(!this.props.user.id) {
+      if(!this.props.user.id && tokenRestore()) {
+          setAuthHeader();
           this.props.fetchAuthUser();
       }
   }
