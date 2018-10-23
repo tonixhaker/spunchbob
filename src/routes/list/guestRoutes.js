@@ -2,6 +2,7 @@ import Homepage from '../../components/pages/homepage/Homepage';
 import About from '../../components/pages/about_us/About';
 import Login from '../../components/pages/auth/Login';
 import Registration from '../../components/pages/auth/Registration';
+import PersonalMenuOrder from '../../components/pages/personal_menu/PersonalMenuOrder';
 
 export default [
     {
@@ -31,5 +32,12 @@ export default [
         name: 'home',
         footer:false,
         component: Registration,
+    },
+    {
+        path: '/personal-menu',
+        exact: true,
+        name: 'personal-menu',
+        footer:true,
+        component: PersonalMenuOrder,
     }
 ];

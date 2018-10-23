@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button} from 'antd';
+import {Link} from 'react-router-dom';
 
 class InviteBlock extends Component {
 
@@ -14,7 +14,7 @@ class InviteBlock extends Component {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a luctus tellus. Suspendisse potenti. Integer auctor fermentum justo, sed mattis nulla ullamcorper eget. Morbi ornare sit amet turpis in faucibus. Mauris iaculis elit id pulvinar sodales. Sed at nisi eu lacus iaculis bibendum. Morbi turpis lacus, scelerisque a tellus nec, efficitur sodales lectus. Etiam posuere non lacus non cursus. Mauris porttitor, sem ut dictum hendrerit, mi justo egestas turpis, et porttitor elit lacus in ante. Duis egestas leo tempor augue mollis, eget placerat metus imperdiet.
                         </p>
                         <div className={'flex flex-center'}>
-                            <Button className={'btn order-btn'}>Хочу!</Button>
+                            <Link to={'/personal-menu'} className={'btn order-btn'}>Хочу!</Link>
                         </div>
                     </div>
                 </div>

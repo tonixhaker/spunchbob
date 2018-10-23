@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
-import RegisterForm from '../../forms/RegisterForm';
+import GuestPersonalMenuForm from '../../forms/GuestPersonalMenuForm';
 import {Parallax} from 'react-parallax';
-class Registration extends Component {
+class PersonalMenuOrder extends Component {
 
     render() {
         return(
@@ -15,7 +15,7 @@ class Registration extends Component {
                     >
                         <div className={'flex flex-center paralaxcontent'}>
                             <div className={'container'}>
-                                <RegisterForm />
+                                <GuestPersonalMenuForm />
                             </div>
                         </div>
                     </Parallax>
@@ -25,4 +25,4 @@ class Registration extends Component {
     }
 }
 
-export default Registration;
+export default PersonalMenuOrder;

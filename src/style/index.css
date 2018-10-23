@@ -36,6 +36,8 @@ body {
   background: rebeccapurple !important;
   border: none !important;
   color: white !important;
+  text-align: center;
+  padding-top: 10px;
 }
 .order-btn:hover {
   background: #47206d !important;
