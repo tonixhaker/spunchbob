@@ -8,7 +8,8 @@ const user = {
     first_name: '',
     last_name: '',
     email: '',
-    avatar_url:''
+    avatar_url:'',
+    is_admin:0
 };
 
 const initialState = {

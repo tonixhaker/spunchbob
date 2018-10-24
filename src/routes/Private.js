@@ -6,6 +6,7 @@ import DefaultLayout from '../components/layout/DefaultLayout';
 import {STATE_STATUSES} from '../common/constants/statuses';
 import {Redirect} from 'react-router-dom';
 import Loader from '../common/components/loader/Loader';
+import {setAuthHeader} from '../common/helpers/storage';
 
 
 
@@ -18,6 +19,7 @@ class Private extends React.Component {
   };
 
   UNSAFE_componentWillMount() {
+      setAuthHeader();
       if(!this.props.user.id) {
           this.props.fetchAuthUser();
       }
