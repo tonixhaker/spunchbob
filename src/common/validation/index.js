@@ -70,6 +70,18 @@ export const oneLetterOneDigit = value =>
 export const charsAndDigitsOnly = value =>
     value && !/^[a-zA-Z0-9]*$/i.test(value) ? 'Значение должно состоять только из латинских букв и цифр' : undefined;
 
+export const digitsOnly = value =>
+    value && !/^[0-9]*$/i.test(value) ? 'Значение должно состоять только из цифр' : undefined;
+
+export const maxGrouth = max => value =>
+    value>max ? 'Да вы просто гигант! Пожалуйста позвоните нам' : undefined;
+
+export const minGrouth = min => value =>
+    value<min ? 'Введите корректный рост' : undefined;
+
+export const weightDiapasone = (min,max) => value =>
+    value>max || value<min ? 'Введите корректный вес' : undefined;
+
 // probably temp validators
 export const usernameValidator = value =>
     value && (!/^[a-zA-Z0-9-_.]{2,255}$/i.test(value) || value.startsWith('-') || value.endsWith('.'))

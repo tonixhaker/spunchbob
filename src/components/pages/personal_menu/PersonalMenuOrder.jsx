@@ -15,7 +15,7 @@ class PersonalMenuOrder extends Component {
                     >
                         <div className={'flex flex-center paralaxcontent'}>
                             <div className={'container'}>
-                                <GuestPersonalMenuForm />
+                                <GuestPersonalMenuForm onSubmit={(values)=>console.log(values)} />
                             </div>
                         </div>
                     </Parallax>

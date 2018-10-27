@@ -2,23 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button } from 'antd';
 import { withFormik } from 'formik';
-import { InputFiled } from '../../common';
+import { InputFiled,TextArea } from '../../common';
 import {
     required,
     minLength,
     email,
     validateForm,
     charsOnly,
-    passwordConfirmation
+    digitsOnly,
+    maxGrouth,
+    minGrouth,
+    weightDiapasone
 } from '../../common/validation';
-import { Link } from 'react-router-dom';
 
 const registerFormSchema = {
     first_name: [required, charsOnly],
-    last_name: [required, charsOnly],
     email: [required, email, minLength(3)],
-    password: [required, minLength(6)],
-    c_password: [required, passwordConfirmation('password')]
+    growth: [required, digitsOnly,maxGrouth(300),minGrouth(50)],
+    weight: [required,digitsOnly,weightDiapasone(20,300)],
+    phone: [required,digitsOnly]
+
 };
 
 const validate = values => validateForm(values, registerFormSchema);
@@ -44,6 +47,53 @@ const GuestPersonalMenuForm = ({ errors, touched, handleChange, handleBlur, hand
                 required
                 onChange={handleChange}
                 onBlur={handleBlur}
+                name="growth"
+                meta={{ touched: touched.growth, error: errors.growth }}
+                type="text"
+                placeholder="(см)"
+                label="Рост"
+                value={values.growth}
+            />
+            <InputFiled
+                size={'large'}
+                required
+                onChange={handleChange}
+                onBlur={handleBlur}
+                name="weight"
+                meta={{ touched: touched.weight, error: errors.weight }}
+                type="text"
+                placeholder="(кг)"
+                label="Вес"
+                value={values.weight}
+            />
+            <TextArea
+                size={'large'}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                name="allergy"
+                autosize={{ minRows: 4, maxRows: 8 }}
+                meta={{ touched: touched.allergy, error: errors.allergy }}
+                type="text"
+                placeholder="Есть ли у вас аллергии на что-то, принимаете ли вы какие либо преператы?"
+                label="Особенности"
+                value={values.allergy}
+            />
+            <TextArea
+                size={'large'}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                name="goals"
+                autosize={{ minRows: 4, maxRows: 8 }}
+                meta={{ touched: touched.goals, error: errors.goals }}
+                type="text"
+                placeholder="Чего хотите добиться, что сподвигло вас питаться правильно?"
+                label="Цель"
+                value={values.goals}
+            />
+            <InputFiled
+                size={'large'}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 name="email"
                 meta={{ touched: touched.email, error: errors.email }}
                 type="text"
@@ -65,7 +115,7 @@ const GuestPersonalMenuForm = ({ errors, touched, handleChange, handleBlur, hand
             />
             <div className={'buttons'}>
                 <Button size={'large'} className={'floatLeft'} htmlType="submit">
-                    <Link to={'/login'}>Составить</Link>
+                    Составить
                 </Button>
             </div>
         </Form>
@@ -83,7 +133,7 @@ GuestPersonalMenuForm.propTypes = {
 
 const GuestPersonalMenuFormWithFormik = withFormik({
     enableReinitialize: true,
-    mapPropsToValues: () => ({ email: '', password: '', first_name: '', last_name: '', c_password: '' }),
+    mapPropsToValues: () => ({ email: '', weight: '', first_name: '', growth: '', phone:'' }),
     handleSubmit(
         values,
         {

@@ -9,6 +9,7 @@ const user = {
     last_name: '',
     email: '',
     avatar_url:'',
+    full_name:'',
     is_admin:0
 };
 
