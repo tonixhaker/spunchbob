@@ -32,7 +32,7 @@ class Routes extends React.Component{
                                     return <Private key={i} {...route}  />;
                                 }
                                 return (
-                                    <Public key={i} {...route}  />
+                                    <Public key={i} {...route} {...this.props} />
                                 );
                             })
                         }

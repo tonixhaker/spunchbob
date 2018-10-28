@@ -1,7 +1,15 @@
 import {success, error} from 'redux-saga-requests';
 import { STATE_STATUSES } from '../../common/constants/statuses';
 import {tokenRemove, tokenStore} from '../../common/helpers/storage';
-import {AUTH_FETCH_USER, AUTH_GOOGLE, AUTH_LOGIN, AUTH_LOGOUT, AUTH_REGISTER, AUTH_TELEGRAM} from './actions';
+import {
+    AUTH_FETCH_USER,
+    AUTH_GOOGLE,
+    AUTH_LOGIN,
+    AUTH_LOGOUT,
+    AUTH_REGISTER,
+    AUTH_SET_PASSWORD,
+    AUTH_TELEGRAM
+} from './actions';
 
 const user = {
     id: null,
@@ -96,6 +104,18 @@ export default (state = initialState, action) => {
         return {...initialState, status: STATE_STATUSES.READY, isAuthenticated: false };
     }
     case error(AUTH_LOGOUT): {
+        return errorReducer(action.payload.response.data);
+    }
+
+    case AUTH_SET_PASSWORD: {
+        return processReducer(state);
+    }
+    case success(AUTH_SET_PASSWORD): {
+        const { token, user } = action.payload.data.data;
+        tokenStore(token);
+        return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
+    }
+    case error(AUTH_SET_PASSWORD): {
         return errorReducer(action.payload.response.data);
     }
 

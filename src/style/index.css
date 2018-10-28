@@ -24,6 +24,10 @@ body {
   flex-direction: column;
 }
 
+.margintop20 {
+  margin-top: 20px;
+}
+
 .btn {
   text-shadow: #8a8282 0px 1px 1px;
 }

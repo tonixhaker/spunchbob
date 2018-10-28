@@ -14,7 +14,7 @@ class Public extends React.Component {
         const Component = this.props.component;
         const { isAuthenticated } = this.props;
 
-        if(isAuthenticated && (this.props.path ==='/login' || this.props.path ==='/register')){
+        if(isAuthenticated && (this.props.path ==='/login' || this.props.path ==='/register' || this.props.path === '/set-password')){
             return <Redirect to={'/'} />;
         }
         else{

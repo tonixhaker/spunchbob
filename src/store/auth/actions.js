@@ -70,3 +70,16 @@ export const telegram_auth = (response) => ({
         }
     }
 });
+
+
+export const AUTH_SET_PASSWORD = 'AUTH_SET_PASSWORD';
+export const set_password = (data) => ({
+    type: AUTH_SET_PASSWORD,
+    payload: {
+        request: {
+            method: 'post',
+            url: `${resourceBase}/set-password`,
+            data
+        }
+    }
+});

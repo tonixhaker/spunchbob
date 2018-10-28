@@ -3,6 +3,7 @@ import About from '../../components/pages/about_us/About';
 import Login from '../../components/pages/auth/Login';
 import Registration from '../../components/pages/auth/Registration';
 import PersonalMenuOrder from '../../components/pages/personal_menu/PersonalMenuOrder';
+import SetPassword from '../../components/pages/auth/SetPassword';
 
 export default [
     {
@@ -39,5 +40,12 @@ export default [
         name: 'personal-menu',
         footer:true,
         component: PersonalMenuOrder,
+    },
+    {
+        path: '/set-password',
+        exact: true,
+        name: 'set-password',
+        footer:true,
+        component: SetPassword,
     }
 ];
