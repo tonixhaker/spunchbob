@@ -8,13 +8,14 @@ import thunkMiddleware from 'redux-thunk';
 import saga from './saga';
 
 import auth from './auth/reducer';
-
+import order from './order/reducer';
 
 const loggerMiddleware = createLogger();
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
-    auth
+    auth,
+    order
 });
 
 export function initializeStore(initialState = undefined) {

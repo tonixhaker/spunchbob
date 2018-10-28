@@ -1,6 +1,6 @@
 import {success, error} from 'redux-saga-requests';
 import { STATE_STATUSES } from '../../common/constants/statuses';
-import {tokenStore} from '../../common/helpers/storage';
+import {tokenRemove, tokenStore} from '../../common/helpers/storage';
 import {AUTH_FETCH_USER, AUTH_GOOGLE, AUTH_LOGIN, AUTH_LOGOUT, AUTH_REGISTER, AUTH_TELEGRAM} from './actions';
 
 const user = {
@@ -85,6 +85,7 @@ export default (state = initialState, action) => {
         return { ...state, status: STATE_STATUSES.READY, user:user, isAuthenticated: true };
     }
     case error(AUTH_FETCH_USER) : {
+        tokenRemove();
         return errorReducer(action.payload.response.data);
     }
 
